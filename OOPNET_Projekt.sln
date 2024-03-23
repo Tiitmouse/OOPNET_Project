@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCup_Data", "WCup_Data\WCup_Data.csproj", "{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

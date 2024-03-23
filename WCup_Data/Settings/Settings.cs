@@ -4,27 +4,35 @@ namespace WCup_Data.Settings;
 public class Settings
 { 
     public char CupType{get; set; } // 'W' or 'M'
-    public char DataFetchType{get; set; } // 'W' or 'M'
-    public Languages Language{get; set; }
-    public enum Languages
+    public char DataFetchType{get; set; } // 'L' or 'G'
+    public Language DisplayLanguage{get; set; }
+    public enum Language
     {
         English, Croatian
     } 
     
-    public Settings? LoadSettings()
+    public static Settings? LoadSettings()
     {
         if (!File.Exists("settings.json"))
         {
-            return null;
+            Settings defaultSettings = new Settings
+            {
+                CupType = 'W',
+                DataFetchType = 'L',
+                DisplayLanguage = Language.English
+            };
+            return defaultSettings;
         }
         try
         {
             string json = File.ReadAllText("settings.json");
-            Settings settings = JsonSerializer.Deserialize<Settings>(json) ?? throw new InvalidOperationException();
+            Settings settings = JsonSerializer.Deserialize<Settings>(json) 
+                                ?? throw new InvalidOperationException();
             return settings;
         }
-        catch
+        catch (Exception ex)
         {
+            //TODO handle exceptions
             return null;
         }
     }
