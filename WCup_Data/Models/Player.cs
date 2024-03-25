@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using WCup_Data.ModelHelpers;
 using WCup_Data.Models.Enums;
 
 namespace WCup_Data.Models;
@@ -15,5 +16,6 @@ public class Player
     public int ShirtNumber { get; set; }
 
     [JsonPropertyName("position")]
+    [JsonConverter(typeof(PositionConverter))]
     public Position Position { get; set; }
 }

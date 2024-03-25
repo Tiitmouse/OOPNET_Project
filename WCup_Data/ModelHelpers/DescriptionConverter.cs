@@ -17,6 +17,8 @@ namespace WCup_Data.ModelHelpers;
                     return WeatherDescription.ClearNight;
                 case "Cloudy":
                     return WeatherDescription.Cloudy;
+                case "Cloudy Night":
+                    return WeatherDescription.CloudyNight;
                 case "Partly Cloudy":
                     return WeatherDescription.PartlyCloudy;
                 case "Partly Cloudy Night":

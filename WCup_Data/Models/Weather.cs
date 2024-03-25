@@ -23,5 +23,6 @@ public class Weather
     public int WindSpeed { get; set; }
 
     [JsonPropertyName("description")]
+    [JsonConverter(typeof(DescriptionConverter))]
     public WeatherDescription WeatherDescription { get; set; }
 }

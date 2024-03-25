@@ -2,9 +2,9 @@ namespace WCup_Data.DataFetching;
 
 public static class FetchFactory
 {
-    public static IDataFetcher FetchData(Settings.Settings settings)
+    public static IDataFetcher FetchData(char dataFetchType)
     {
-        switch (settings.DataFetchType)
+        switch (dataFetchType)
         {
             case 'L':
                 return new LocalFetch();

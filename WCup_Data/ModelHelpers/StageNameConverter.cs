@@ -15,7 +15,7 @@ namespace WCup_Data.ModelHelpers;
             {
                 case "Final":
                     return StageName.Final;
-                case "First stage":
+                case "First Stage":
                     return StageName.FirstStage;
                 case "Play-off for third place":
                     return StageName.PlayOffForThirdPlace;

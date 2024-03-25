@@ -24,4 +24,9 @@ public class GlobalFetch : IDataFetcher
     {
         throw new NotImplementedException();
     }
+
+    public IEnumerable<TeamDetails> fetchTeamDetails()
+    {
+        throw new NotImplementedException();
+    }
 }

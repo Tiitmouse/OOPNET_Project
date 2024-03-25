@@ -6,7 +6,7 @@ namespace WCup_Data.Models;
         [JsonPropertyName("country")]
         public string Country { get; set; }
 
-        [JsonPropertyName("code")]
+        [JsonPropertyName("fifa_code")]
         public string Code { get; set; }
 
         [JsonPropertyName("goals")]

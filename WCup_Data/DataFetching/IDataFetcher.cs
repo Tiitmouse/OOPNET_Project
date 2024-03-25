@@ -9,6 +9,7 @@ public interface IDataFetcher
     IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode);
     IEnumerable<Team> fetchTeams();
     IEnumerable<Result> fetchResults();
+    IEnumerable<TeamDetails> fetchTeamDetails();
     
     // IEnumerable<> fetchGroupResults();
 }
