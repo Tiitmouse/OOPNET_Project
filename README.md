@@ -1,4 +1,4 @@
-# Object-oriented programming - practical in the NET environment
+# Object-oriented programming - practical in .NET environment
 ## Project assignment World Cup
 
 - three projects in charge of displaying statistics from the World Football Championships
