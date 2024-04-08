@@ -1,31 +1,31 @@
-# Objektno orijentirano programiranje - praktikum u NET okolini
-## Projektni zadatak World Cup
+# Object-oriented programming - practical in .NET environment
+## Project assignment World Cup
 
-- tri projekta zadužena za prikaz statistika sa Svjetskih nogometnih prvenstava
-- Projekti su sljedeći: Windows Forms aplikacija, Windows Presentation Foundation aplikacija i projekt zadužen za manipulaciju podacima „Podatkovni Sloj“ (Class Library) koji se koristi u obje aplikacije
+- three projects in charge of displaying statistics from the World Football Championships
+- The projects are as follows: Windows Forms application, Windows Presentation Foundation application and the project responsible for data manipulation "Data Layer" (Class Library) which is used in both applications
 
-#### Podatkovni sloj
+#### Data layer
 
-- dohvaćanje podataka s navedenog API-ja (uključujući čitanje JSON datoteka)
-- parsiranje i mapiranje dohvaćenih podataka
-- pripremu podataka za korištenje u klijentskim aplikacijama
-- pohranu podataka u tekstualne datoteke
-- čitanje podataka iz tekstualnih datoteka
+- retrieving data from the specified API (including reading JSON files)
+- parsing and mapping of retrieved data
+- preparation of data for use in client applications
+- data storage in text files
+- reading data from text files
 
-#### Windows Forms aplikacija
+#### Windows Forms application
 
-- Početne postavke
-- Omiljena reprezentacija
-- Omiljeni igrači
-- Slike igrača
-- Rang liste
-- Ispis rang listi
-- Zatvaranje aplikacije i postavke
+- Initial settings
+- Favorite national team
+- Favorite players
+- Pictures of players
+- Ranking list
+- Print ranking list
+- Closing the application and settings
 
-#### Windows Presentation Foundation aplikacija
+#### Windows Presentation Foundation application
 
-- Početne postavke
-- Pregled reprezentacije
-- Prikaz početne postave
-- Pregled igrača
-- Zatvaranje aplikacije i postavke
+- Initial settings
+- Overview of the national team
+- Display of the initial setup
+- Player overview
+- Closing the application and settings
