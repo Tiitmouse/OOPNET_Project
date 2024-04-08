@@ -5,27 +5,20 @@ namespace WCup_Data.DataFetching;
 
 public class GlobalFetch : IDataFetcher
 {
-    public IEnumerable<Match> fetchMatches()
+    public IEnumerable<Match> FetchMatches()
     {
         throw new NotImplementedException();
     }
-
-    public IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode)
+    public IEnumerable<Result>? FetchResults()
     {
         throw new NotImplementedException();
     }
-
-    public IEnumerable<Team> fetchTeams()
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Result>? fetchResults()
-    {
-        throw new NotImplementedException();
-    }
-
     public IEnumerable<TeamDetails>? FetchTeamDetails()
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerable<Group> FetchGroups()
     {
         throw new NotImplementedException();
     }

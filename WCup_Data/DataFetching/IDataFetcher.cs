@@ -5,11 +5,13 @@ namespace WCup_Data.DataFetching;
 
 public interface IDataFetcher
 {
-    IEnumerable<Match> fetchMatches();
-    IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode);
-    IEnumerable<Team> fetchTeams();
-    IEnumerable<Result>? fetchResults();
+    IEnumerable<Match>? FetchMatches();
+    //should be done elsewhere
+    // IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode);
+    //probably not needed
+    // IEnumerable<Team> fetchTeams();
+    IEnumerable<Result>? FetchResults();
     IEnumerable<TeamDetails>? FetchTeamDetails();
     
-    // IEnumerable<> fetchGroupResults();
+    IEnumerable<Group>? FetchGroups();
 }

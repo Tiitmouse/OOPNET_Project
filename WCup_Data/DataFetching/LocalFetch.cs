@@ -13,7 +13,7 @@ public class LocalFetch : IDataFetcher
         $"/Users/lorena/Documents/projekti/OOPNET_Projekt/worldcup.sfg.io/" +
         $"{SettingsController.GetSettings().CType.ToString()}/";
     
-    public IEnumerable<Match> fetchMatches()
+    public IEnumerable<Match> FetchMatches()
     {
         try
         {
@@ -27,29 +27,7 @@ public class LocalFetch : IDataFetcher
         }
         return new System.Collections.Generic.List<Match>();
     }
-
-    public IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Team> fetchTeams()
-    {
-        // try
-        // {
-        //     string json = File.ReadAllText($"{_path}teams.json");
-        //     IEnumerable<Team> teams = JsonSerializer.Deserialize<List<Team>>(json);
-        //     return teams;
-        // }
-        // catch (JsonException e)
-        // {
-        //     Console.WriteLine(e);
-        // }
-        // return new System.Collections.Generic.List<Team>();
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Result>? fetchResults()
+    public IEnumerable<Result>? FetchResults()
     {
         try
         {
@@ -77,5 +55,20 @@ public class LocalFetch : IDataFetcher
             Console.WriteLine(e);
         }
         return new System.Collections.Generic.List<TeamDetails>();
+    }
+
+    public IEnumerable<Group> FetchGroups()
+    {
+        try
+        {
+            string json = File.ReadAllText($"{_path}group_results.json");
+            IEnumerable<Group>? groups = JsonSerializer.Deserialize<List<Group>>(json);
+            return groups;
+        }
+        catch (JsonException e)
+        {
+            Console.WriteLine(e);
+        }
+        return new System.Collections.Generic.List<Group>();
     }
 }
