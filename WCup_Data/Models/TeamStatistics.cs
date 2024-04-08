@@ -22,6 +22,7 @@ public class TeamStatistics
         public int Blocked { get; set; }
 
         [JsonPropertyName("woodwork")]
+        [JsonConverter(typeof(secondIntConverter))]
         public int Woodwork { get; set; }
 
         [JsonPropertyName("corners")]
@@ -46,22 +47,26 @@ public class TeamStatistics
         public int DistanceCovered { get; set; }
 
         [JsonPropertyName("balls_recovered")]
+        [JsonConverter(typeof(secondIntConverter))]
         public int BallsRecovered { get; set; }
 
         [JsonPropertyName("tackles")]
         public int Tackles { get; set; }
 
         [JsonPropertyName("clearances")]
+        [JsonConverter(typeof(secondIntConverter))]
         public int Clearances { get; set; }
 
         [JsonPropertyName("yellow_cards")]
+        [JsonConverter(typeof(secondIntConverter))]
         public int YellowCards { get; set; }
 
         [JsonPropertyName("red_cards")]
         public int RedCards { get; set; }
 
         [JsonPropertyName("fouls_committed")]
-        public int? FoulsCommitted { get; set; }
+        [JsonConverter(typeof(secondIntConverter))]
+        public int FoulsCommitted { get; set; }
 
         [JsonPropertyName("tactics")]
         [JsonConverter(typeof(TacticsConverter))]

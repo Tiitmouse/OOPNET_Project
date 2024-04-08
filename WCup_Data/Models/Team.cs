@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 namespace WCup_Data.Models;
 
+//probaby useless
     public class Team
     {
         [JsonPropertyName("country")]
