@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 using WCup_Data.Models.Enums;
 
 namespace WCup_Data.ModelHelpers;
-
+//useless shit need to remove probably
     internal class StageNameConverter : JsonConverter<StageName>
     {
         public override bool CanConvert(Type t) => t == typeof(StageName);

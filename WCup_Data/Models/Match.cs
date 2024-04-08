@@ -37,8 +37,8 @@ namespace WCup_Data.Models
         public string[] Officials { get; set; }
 
         [JsonPropertyName("stage_name")]
-        [JsonConverter(typeof(StageNameConverter))]
-        public StageName StageName { get; set; }
+        // [JsonConverter(typeof(StageNameConverter))]
+        public string StageName { get; set; }
 
         [JsonPropertyName("home_team_country")]
         public string HomeTeamCountry { get; set; }
@@ -68,7 +68,6 @@ namespace WCup_Data.Models
         public TeamEvent[] AwayTeamEvents { get; set; }
 
         [JsonPropertyName("home_team_statistics")]
-        [JsonConverter(typeof(IntConverter))]
         public TeamStatistics HomeTeamStatistics { get; set; }
 
         [JsonPropertyName("away_team_statistics")]
