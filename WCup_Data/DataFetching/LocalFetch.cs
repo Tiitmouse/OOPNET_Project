@@ -15,18 +15,17 @@ public class LocalFetch : IDataFetcher
     
     public IEnumerable<Match> fetchMatches()
     {
-        // try
-        // {
-        //     string json = File.ReadAllText($"{_path}matches.json");
-        //     IEnumerable<Match> matches = JsonSerializer.Deserialize<List<Match>>(json);
-        //     return matches;
-        // }
-        // catch (JsonException e)
-        // {
-        //     Console.WriteLine(e);
-        // }
-        // return new List<Match>();
-        throw new NotImplementedException();
+        try
+        {
+            string json = File.ReadAllText($"{_path}matches.json");
+            IEnumerable<Match>? matches = JsonSerializer.Deserialize<List<Match>>(json);
+            return matches;
+        }
+        catch (JsonException e)
+        {
+            Console.WriteLine(e);
+        }
+        return new System.Collections.Generic.List<Match>();
     }
 
     public IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode)
@@ -50,18 +49,28 @@ public class LocalFetch : IDataFetcher
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Result> fetchResults()
+    public IEnumerable<Result>? fetchResults()
     {
-        throw new NotImplementedException();
+        try
+        {
+            string json = File.ReadAllText($"{_path}results.json");
+            IEnumerable<Result>? results = JsonSerializer.Deserialize<List<Result>>(json);
+            return results;
+        }
+        catch (JsonException e)
+        {
+            Console.WriteLine(e);
+        }
+        return new System.Collections.Generic.List<Result>();
     }
 
-    public IEnumerable<TeamDetails> fetchTeamDetails()
+    public IEnumerable<TeamDetails>? FetchTeamDetails()
     {
         try
         {
             string json = File.ReadAllText($"{_path}teams.json");
-            IEnumerable<TeamDetails> teamdetails = JsonSerializer.Deserialize<List<TeamDetails>>(json);
-            return teamdetails;
+            IEnumerable<TeamDetails>? teamDetails = JsonSerializer.Deserialize<List<TeamDetails>>(json);
+            return teamDetails;
         }
         catch (JsonException e)
         {

@@ -20,12 +20,12 @@ public class GlobalFetch : IDataFetcher
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Result> fetchResults()
+    public IEnumerable<Result>? fetchResults()
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<TeamDetails> fetchTeamDetails()
+    public IEnumerable<TeamDetails>? FetchTeamDetails()
     {
         throw new NotImplementedException();
     }
