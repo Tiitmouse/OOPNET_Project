@@ -10,10 +10,10 @@ public class GlobalFetch : IDataFetcher
     private readonly string _link = 
      $"https://worldcup-vua.nullbit.hr/" +
      $"{SettingsController.GetSettings().CType.ToString()}/";
+    HttpClient client = new HttpClient();
 
     public async Task<List<Match>?> FetchMatches()
     {
-        HttpClient client = new HttpClient();
         HttpResponseMessage response = await client.GetAsync(_link + "matches");
 
         if (response.IsSuccessStatusCode)
@@ -32,15 +32,43 @@ public class GlobalFetch : IDataFetcher
     // }
     public async Task<List<Result>?> FetchResults()
     {
-        throw new NotImplementedException();
-    }
-    public Task<List<TeamDetails>>? FetchTeamDetails()
+        HttpResponseMessage response = await client.GetAsync(_link + "teams/results");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string json = await response.Content.ReadAsStringAsync();
+            List<Result> results = JsonSerializer.Deserialize<List<Result>>(json);
+            return results;
+        }
+        {
+            throw new Exception("Failed to fetch matches");
+        }    }
+    public async Task<List<TeamDetails>>? FetchTeamDetails()
     {
-        throw new NotImplementedException();
+        HttpResponseMessage response = await client.GetAsync(_link + "teams");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string json = await response.Content.ReadAsStringAsync();
+            List<TeamDetails> teams = JsonSerializer.Deserialize<List<TeamDetails>>(json);
+            return teams;
+        }
+        {
+            throw new Exception("Failed to fetch matches");
+        }    
     }
 
-    public Task<List<Group>>? FetchGroups()
+    public async Task<List<Group>>? FetchGroups()
     {
-        throw new NotImplementedException();
-    }
+        HttpResponseMessage response = await client.GetAsync(_link + "teams/group_results");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string json = await response.Content.ReadAsStringAsync();
+            List<Group> groups = JsonSerializer.Deserialize<List<Group>>(json);
+            return groups;
+        }
+        {
+            throw new Exception("Failed to fetch matches");
+        }      }
 }
