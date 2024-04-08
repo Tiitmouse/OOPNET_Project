@@ -5,13 +5,12 @@ namespace WCup_Data.DataFetching;
 
 public interface IDataFetcher
 {
-    IEnumerable<Match>? FetchMatches();
-    //should be done elsewhere
+    Task<List<Match>>? FetchMatches();
     // IEnumerable<Match> fetchMatchesByCountry(string countryFifaCode);
     //probably not needed
     // IEnumerable<Team> fetchTeams();
-    IEnumerable<Result>? FetchResults();
-    IEnumerable<TeamDetails>? FetchTeamDetails();
+    Task<List<Result>>? FetchResults();
+    Task<List<TeamDetails>>? FetchTeamDetails();
     
-    IEnumerable<Group>? FetchGroups();
+    Task<List<Group>>? FetchGroups();
 }

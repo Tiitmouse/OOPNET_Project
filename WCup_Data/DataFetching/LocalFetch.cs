@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Text.Json;
 using QuickType;
 using WCup_Data.Models;
 using WCup_Data.Settings;
-using Exception = System.Exception;
 
 namespace WCup_Data.DataFetching;
 
@@ -13,62 +11,62 @@ public class LocalFetch : IDataFetcher
         $"/Users/lorena/Documents/projekti/OOPNET_Projekt/worldcup.sfg.io/" +
         $"{SettingsController.GetSettings().CType.ToString()}/";
     
-    public IEnumerable<Match> FetchMatches()
+    public async Task<List<Match>> FetchMatches()
     {
         try
         {
             string json = File.ReadAllText($"{_path}matches.json");
-            IEnumerable<Match>? matches = JsonSerializer.Deserialize<List<Match>>(json);
-            return matches;
+            List<Match>? matches = JsonSerializer.Deserialize<List<Match>>(json);
+            return matches ?? throw new InvalidOperationException();
         }
         catch (JsonException e)
         {
             Console.WriteLine(e);
         }
-        return new System.Collections.Generic.List<Match>();
+        return new List<Match>();
     }
-    public IEnumerable<Result>? FetchResults()
+    public async Task<List<Result>>? FetchResults()
     {
         try
         {
             string json = File.ReadAllText($"{_path}results.json");
-            IEnumerable<Result>? results = JsonSerializer.Deserialize<List<Result>>(json);
-            return results;
+            List<Result>? results = JsonSerializer.Deserialize<List<Result>>(json);
+            return results ?? throw new InvalidOperationException();
         }
         catch (JsonException e)
         {
             Console.WriteLine(e);
         }
-        return new System.Collections.Generic.List<Result>();
+        return new List<Result>();
     }
 
-    public IEnumerable<TeamDetails>? FetchTeamDetails()
+    public async Task<List<TeamDetails>>? FetchTeamDetails()
     {
         try
         {
             string json = File.ReadAllText($"{_path}teams.json");
-            IEnumerable<TeamDetails>? teamDetails = JsonSerializer.Deserialize<List<TeamDetails>>(json);
-            return teamDetails;
+            List<TeamDetails>? teamDetails = JsonSerializer.Deserialize<List<TeamDetails>>(json);
+            return teamDetails ?? throw new InvalidOperationException();
         }
         catch (JsonException e)
         {
             Console.WriteLine(e);
         }
-        return new System.Collections.Generic.List<TeamDetails>();
+        return new List<TeamDetails>();
     }
 
-    public IEnumerable<Group> FetchGroups()
+    public async Task<List<Group>>? FetchGroups()
     {
         try
         {
             string json = File.ReadAllText($"{_path}group_results.json");
-            IEnumerable<Group>? groups = JsonSerializer.Deserialize<List<Group>>(json);
-            return groups;
+            List<Group>? groups = JsonSerializer.Deserialize<List<Group>>(json);
+            return groups ?? throw new InvalidOperationException();
         }
         catch (JsonException e)
         {
             Console.WriteLine(e);
         }
-        return new System.Collections.Generic.List<Group>();
+        return new List<Group>();
     }
 }
