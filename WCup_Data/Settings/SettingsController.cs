@@ -6,6 +6,9 @@ namespace WCup_Data.Settings;
 public static class SettingsController
 {
     private static Settings _settingsValue = null;
+    /// <summary>
+    /// Is true if no settings file is found and default settings are used.
+    /// </summary>
     public static bool IsDefault = false;
     
     private static Settings LoadSettings()
@@ -22,7 +25,7 @@ public static class SettingsController
             Settings defaultSettings = new Settings
             {
                 CType = Settings.CupType.women,
-                DataFetchType = 'L',
+                DataFetchType = 'G',
                 DisplayLanguage = Settings.Language.English
             };
             IsDefault = true;

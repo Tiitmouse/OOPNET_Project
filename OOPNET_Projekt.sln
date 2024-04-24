@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCup_Data", "WCup_Data\WCup_Data.csproj", "{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WCup_Data", "WCup_Data\WCup_Data.csproj", "{7111C968-833F-4AF7-9AE4-5B7441BFD3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCup_App", "WCup_App\WCup_App.csproj", "{66F87BAA-435D-4774-9FA2-2A1381227269}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F87BAA-435D-4774-9FA2-2A1381227269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F87BAA-435D-4774-9FA2-2A1381227269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F87BAA-435D-4774-9FA2-2A1381227269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F87BAA-435D-4774-9FA2-2A1381227269}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B0D639A-42AD-451D-A30F-5A103654DD6E}
 	EndGlobalSection
 EndGlobal

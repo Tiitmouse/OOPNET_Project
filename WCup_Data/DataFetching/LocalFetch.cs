@@ -7,8 +7,9 @@ namespace WCup_Data.DataFetching;
 
 public class LocalFetch : IDataFetcher
 {
+    //  /Users/lorena/Documents/projekti
     private readonly string _path = 
-        $"/Users/lorena/Documents/projekti/OOPNET_Projekt/worldcup.sfg.io/" +
+        $"/OOPNET_Projekt/worldcup.sfg.io/" +
         $"{SettingsController.GetSettings().CType.ToString()}/";
     
     public async Task<List<Match>> FetchMatches()
@@ -19,7 +20,7 @@ public class LocalFetch : IDataFetcher
             List<Match>? matches = JsonSerializer.Deserialize<List<Match>>(json);
             return matches ?? throw new InvalidOperationException();
         }
-        catch (JsonException e)
+        catch (Exception e)
         {
             Console.WriteLine(e);
         }
