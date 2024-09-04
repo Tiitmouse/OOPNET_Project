@@ -74,4 +74,10 @@ public class LocalFetch : IDataFetcher
         }
         return new List<Group>();
     }
+
+    public Task<List<Match>> fetchMatchesByCountry(string countryFifaCode)
+    {
+        //TODO implement to filster matches by fifa code
+        throw new NotImplementedException();
+    }
 }

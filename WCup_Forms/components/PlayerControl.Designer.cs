@@ -56,7 +56,7 @@
             // lblPlayerPosition
             // 
             lblPlayerPosition.AutoSize = true;
-            lblPlayerPosition.Location = new Point(155, 9);
+            lblPlayerPosition.Location = new Point(197, 9);
             lblPlayerPosition.Name = "lblPlayerPosition";
             lblPlayerPosition.Size = new Size(47, 15);
             lblPlayerPosition.TabIndex = 2;
@@ -65,20 +65,19 @@
             // lblPlayerIsCapetan
             // 
             lblPlayerIsCapetan.AutoSize = true;
-            lblPlayerIsCapetan.Location = new Point(233, 9);
+            lblPlayerIsCapetan.Location = new Point(276, 10);
             lblPlayerIsCapetan.Name = "lblPlayerIsCapetan";
-            lblPlayerIsCapetan.Size = new Size(15, 15);
+            lblPlayerIsCapetan.Size = new Size(0, 15);
             lblPlayerIsCapetan.TabIndex = 3;
-            lblPlayerIsCapetan.Text = "C";
             // 
             // lblPlayerIsFavourite
             // 
             lblPlayerIsFavourite.AutoSize = true;
             lblPlayerIsFavourite.Location = new Point(296, 10);
             lblPlayerIsFavourite.Name = "lblPlayerIsFavourite";
-            lblPlayerIsFavourite.Size = new Size(27, 15);
+            lblPlayerIsFavourite.Size = new Size(17, 15);
             lblPlayerIsFavourite.TabIndex = 4;
-            lblPlayerIsFavourite.Text = "☆★";
+            lblPlayerIsFavourite.Text = "☆";
             // 
             // PlayerControl
             // 

@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using System.Text.Json;
+using WCup_Data.Models;
+
 namespace WCup_Data.Settings;
 
 public class Settings
@@ -8,6 +11,7 @@ public class Settings
         CType = cType;
         DataFetchType = dataFetchType;
         DisplayLanguage = displayLanguage;
+        List<Player> favouritePlayers;
     }
 
     internal Settings()
@@ -17,6 +21,8 @@ public class Settings
     public CupType CType{get; set; } // 'W' or 'M'
     public char DataFetchType{get; set; } // 'L' or 'G'
     public Language DisplayLanguage{get; set; }
+
+    public List<Player> favouritePlayers { get; set; } = new List<Player>();
 
     public enum CupType
     {

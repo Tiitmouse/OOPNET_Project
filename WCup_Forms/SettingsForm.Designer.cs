@@ -52,6 +52,7 @@
             btnSave.TabIndex = 12;
             btnSave.Text = "SPREMI";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -61,6 +62,7 @@
             btnCancel.TabIndex = 11;
             btnCancel.Text = "ODUSTANI";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // gboxDataFetching
             // 
@@ -77,14 +79,13 @@
             // 
             rbDataFechLocal.AutoSize = true;
             rbDataFechLocal.CheckAlign = ContentAlignment.MiddleRight;
-            rbDataFechLocal.Checked = true;
             rbDataFechLocal.Location = new Point(6, 22);
             rbDataFechLocal.Name = "rbDataFechLocal";
             rbDataFechLocal.Size = new Size(79, 19);
             rbDataFechLocal.TabIndex = 1;
-            rbDataFechLocal.TabStop = true;
             rbDataFechLocal.Text = "LOKALNO";
             rbDataFechLocal.UseVisualStyleBackColor = true;
+            rbDataFechLocal.CheckedChanged += rbDataFechLocal_CheckedChanged;
             // 
             // rbDataFechGlobal
             // 
@@ -96,6 +97,7 @@
             rbDataFechGlobal.TabIndex = 2;
             rbDataFechGlobal.Text = "GLOBALNO";
             rbDataFechGlobal.UseVisualStyleBackColor = true;
+            rbDataFechGlobal.CheckedChanged += rbDataFechGlobal_CheckedChanged;
             // 
             // gboxLanguage
             // 
@@ -118,19 +120,19 @@
             rbLanguageCro.TabIndex = 1;
             rbLanguageCro.Text = "HRV";
             rbLanguageCro.UseVisualStyleBackColor = true;
+            rbLanguageCro.CheckedChanged += rbLanguageCro_CheckedChanged;
             // 
             // rbLanguageEng
             // 
             rbLanguageEng.AutoSize = true;
             rbLanguageEng.CheckAlign = ContentAlignment.MiddleRight;
-            rbLanguageEng.Checked = true;
             rbLanguageEng.Location = new Point(27, 22);
             rbLanguageEng.Name = "rbLanguageEng";
             rbLanguageEng.Size = new Size(48, 19);
             rbLanguageEng.TabIndex = 2;
-            rbLanguageEng.TabStop = true;
             rbLanguageEng.Text = "ENG";
             rbLanguageEng.UseVisualStyleBackColor = true;
+            rbLanguageEng.CheckedChanged += rbLanguageEng_CheckedChanged;
             // 
             // gboxCupType
             // 
@@ -148,14 +150,13 @@
             // 
             rbCupTypeWomen.AutoSize = true;
             rbCupTypeWomen.CheckAlign = ContentAlignment.MiddleRight;
-            rbCupTypeWomen.Checked = true;
             rbCupTypeWomen.Location = new Point(36, 22);
             rbCupTypeWomen.Name = "rbCupTypeWomen";
             rbCupTypeWomen.Size = new Size(32, 19);
             rbCupTypeWomen.TabIndex = 1;
-            rbCupTypeWomen.TabStop = true;
             rbCupTypeWomen.Text = "Z";
             rbCupTypeWomen.UseVisualStyleBackColor = true;
+            rbCupTypeWomen.CheckedChanged += rbCupTypeWomen_CheckedChanged;
             // 
             // rbCupTypeMen
             // 
@@ -167,6 +168,7 @@
             rbCupTypeMen.TabIndex = 2;
             rbCupTypeMen.Text = "M";
             rbCupTypeMen.UseVisualStyleBackColor = true;
+            rbCupTypeMen.CheckedChanged += rbCupTypeMen_CheckedChanged;
             // 
             // SettingsForm
             // 

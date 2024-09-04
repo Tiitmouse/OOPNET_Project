@@ -45,7 +45,7 @@ public class GlobalFetch : IDataFetcher
             return results;
         }
         {
-            throw new Exception("Failed to fetch matches");
+            throw new Exception("Failed to fetch results");
         }    }
     public async Task<List<TeamDetails>>? FetchTeamDetails()
     {
@@ -58,7 +58,7 @@ public class GlobalFetch : IDataFetcher
             return teams;
         }
         {
-            throw new Exception("Failed to fetch matches");
+            throw new Exception("Failed to fetch team details");
         }    
     }
 
@@ -73,6 +73,22 @@ public class GlobalFetch : IDataFetcher
             return groups;
         }
         {
-            throw new Exception("Failed to fetch matches");
-        }      }
+            throw new Exception("Failed to fetch groups");
+        }      
+    }
+
+    public async Task<List<Match>> fetchMatchesByCountry(string countryFifaCode)
+    {
+        HttpResponseMessage response = await client.GetAsync(_link + $"matches/country?fifa_code={countryFifaCode}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string json = await response.Content.ReadAsStringAsync();
+            List<Match> matches = JsonSerializer.Deserialize<List<Match>>(json);
+            return matches;
+        }
+        {
+            throw new Exception("Failed to fetch groups");
+        }
+    }
 }
