@@ -8,4 +8,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WCup_Data\WCup_Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="views\" />
+  </ItemGroup>
+
 </Project>

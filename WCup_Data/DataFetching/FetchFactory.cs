@@ -11,7 +11,7 @@ public static class FetchFactory
             case 'G':
                 return new GlobalFetch();
             default:
-                throw new InvalidOperationException();
+                throw new System.InvalidOperationException();
         }
     }
 }
