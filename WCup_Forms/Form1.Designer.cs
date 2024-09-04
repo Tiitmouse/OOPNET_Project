@@ -33,13 +33,13 @@
             btnOpenSettings = new Button();
             tabControl = new TabControl();
             tabPagePlayers = new TabPage();
+            btnSetPlayerPicture = new Button();
             btnUnfavorite = new Button();
             btnFavorite = new Button();
             tabPageRanks = new TabPage();
-            btnSortByGoalNumber = new Button();
-            btnSortByYellowCards = new Button();
             label2 = new Label();
-            btnSetPlayerPicture = new Button();
+            btnSortByYellowCards = new Button();
+            btnSortByGoalNumber = new Button();
             tabControl.SuspendLayout();
             tabPagePlayers.SuspendLayout();
             tabPageRanks.SuspendLayout();
@@ -70,6 +70,7 @@
             btnOpenSettings.TabIndex = 4;
             btnOpenSettings.Text = "POSTAVKE";
             btnOpenSettings.UseVisualStyleBackColor = true;
+            btnOpenSettings.Click += btnOpenSettings_Click;
             // 
             // tabControl
             // 
@@ -93,6 +94,15 @@
             tabPagePlayers.TabIndex = 0;
             tabPagePlayers.Text = "IGRACI";
             tabPagePlayers.UseVisualStyleBackColor = true;
+            // 
+            // btnSetPlayerPicture
+            // 
+            btnSetPlayerPicture.Location = new Point(374, 330);
+            btnSetPlayerPicture.Name = "btnSetPlayerPicture";
+            btnSetPlayerPicture.Size = new Size(141, 33);
+            btnSetPlayerPicture.TabIndex = 2;
+            btnSetPlayerPicture.Text = "POSTAVI SLIKU";
+            btnSetPlayerPicture.UseVisualStyleBackColor = true;
             // 
             // btnUnfavorite
             // 
@@ -129,14 +139,14 @@
             tabPageRanks.Text = "RANG LISTE";
             tabPageRanks.UseVisualStyleBackColor = true;
             // 
-            // btnSortByGoalNumber
+            // label2
             // 
-            btnSortByGoalNumber.Location = new Point(16, 19);
-            btnSortByGoalNumber.Name = "btnSortByGoalNumber";
-            btnSortByGoalNumber.Size = new Size(95, 23);
-            btnSortByGoalNumber.TabIndex = 0;
-            btnSortByGoalNumber.Text = "GOLOVI";
-            btnSortByGoalNumber.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(494, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 15);
+            label2.TabIndex = 2;
+            label2.Text = "BROJ POSJETITELJA";
             // 
             // btnSortByYellowCards
             // 
@@ -147,23 +157,14 @@
             btnSortByYellowCards.Text = "ZUTI KARTONI";
             btnSortByYellowCards.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btnSortByGoalNumber
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(494, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(109, 15);
-            label2.TabIndex = 2;
-            label2.Text = "BROJ POSJETITELJA";
-            // 
-            // btnSetPlayerPicture
-            // 
-            btnSetPlayerPicture.Location = new Point(374, 330);
-            btnSetPlayerPicture.Name = "btnSetPlayerPicture";
-            btnSetPlayerPicture.Size = new Size(141, 33);
-            btnSetPlayerPicture.TabIndex = 2;
-            btnSetPlayerPicture.Text = "POSTAVI SLIKU";
-            btnSetPlayerPicture.UseVisualStyleBackColor = true;
+            btnSortByGoalNumber.Location = new Point(16, 19);
+            btnSortByGoalNumber.Name = "btnSortByGoalNumber";
+            btnSortByGoalNumber.Size = new Size(95, 23);
+            btnSortByGoalNumber.TabIndex = 0;
+            btnSortByGoalNumber.Text = "GOLOVI";
+            btnSortByGoalNumber.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
