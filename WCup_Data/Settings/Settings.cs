@@ -27,5 +27,6 @@ public class Settings
         English, Croatian
     } 
     // TODO add resolution
+    // TODO add fav players and team
     
 }
