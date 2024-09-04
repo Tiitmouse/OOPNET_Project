@@ -13,18 +13,18 @@ namespace WCup_Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            loadData();
+            _settings = SettingsController.GetSettings();
+            _fetcher = FetchFactory.FetchData(_settings.DataFetchType);
+            loadDataAsync();
 
         }
 
-        private void loadData()
+        private async Task loadDataAsync()
         {
-            //_settings = SettingsController.GetSettings();
-            //_fetcher = FetchFactory.FetchData(_settings.DataFetchType());
-            //List<Match> matches = _fetcher.FetchMatches();
-            //List<Group> groups = _fetcher.FetchGroups();
-            //List<Result> results = _fetcher.FetchResults();
-            //List<TeamDetails> teams = _fetcher.FetchTeamDetails();
+            List<Match> matches = await _fetcher.FetchMatches();
+            List<Group> groups = await _fetcher.FetchGroups();
+            List<Result> results = await _fetcher.FetchResults();
+            List<TeamDetails> teams = await _fetcher.FetchTeamDetails();
             //SettingsController.SaveSettings();        }
         }
 

@@ -15,6 +15,7 @@ namespace WCup_Forms
         public SettingsForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

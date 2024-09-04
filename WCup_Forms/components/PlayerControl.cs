@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WCup_Data.Models;
 
 namespace WCup_Forms.components
 {
     public partial class PlayerControl : UserControl
     {
-        public PlayerControl()
+        private readonly Player player;
+        public PlayerControl(Player p)
         {
+            player = p;
             InitializeComponent();
         }
     }

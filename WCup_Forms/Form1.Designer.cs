@@ -40,6 +40,7 @@
             label2 = new Label();
             btnSortByYellowCards = new Button();
             btnSortByGoalNumber = new Button();
+            flpPlayers = new FlowLayoutPanel();
             tabControl.SuspendLayout();
             tabPagePlayers.SuspendLayout();
             tabPageRanks.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // tabPagePlayers
             // 
+            tabPagePlayers.Controls.Add(flpPlayers);
             tabPagePlayers.Controls.Add(btnSetPlayerPicture);
             tabPagePlayers.Controls.Add(btnUnfavorite);
             tabPagePlayers.Controls.Add(btnFavorite);
@@ -166,6 +168,14 @@
             btnSortByGoalNumber.Text = "GOLOVI";
             btnSortByGoalNumber.UseVisualStyleBackColor = true;
             // 
+            // flpPlayers
+            // 
+            flpPlayers.FlowDirection = FlowDirection.TopDown;
+            flpPlayers.Location = new Point(22, 22);
+            flpPlayers.Name = "flpPlayers";
+            flpPlayers.Size = new Size(251, 341);
+            flpPlayers.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -199,5 +209,6 @@
         private Button btnSortByYellowCards;
         private Button btnSortByGoalNumber;
         private Button btnSetPlayerPicture;
+        private FlowLayoutPanel flpPlayers;
     }
 }
