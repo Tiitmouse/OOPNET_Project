@@ -11,7 +11,7 @@ public class Settings
         CType = cType;
         DataFetchType = dataFetchType;
         DisplayLanguage = displayLanguage;
-        List<Player> favouritePlayers;
+        List<String> favouritePlayers;
     }
 
     internal Settings()
@@ -22,7 +22,7 @@ public class Settings
     public char DataFetchType{get; set; } // 'L' or 'G'
     public Language DisplayLanguage{get; set; }
 
-    public List<Player> favouritePlayers { get; set; } = new List<Player>();
+    public List<String> favouritePlayers { get; set; } = new List<String>();
 
     public enum CupType
     {

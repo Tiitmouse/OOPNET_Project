@@ -16,12 +16,27 @@ namespace WCup_Forms.components
     {
         private readonly Settings s = SettingsController.GetSettings();
 
+        private bool isFavourite;
+
         private readonly Player player;
         public PlayerControl(Player p)
         {
             player = p;
             InitializeComponent();
             setValues(p);
+        }
+
+        public void setIsFavourite(bool isFavourite)
+        {
+            this.isFavourite = isFavourite;
+            if (isFavourite)
+            {
+                lblPlayerIsFavourite.Text = "★";
+            }
+            else
+            {
+                lblPlayerIsFavourite.Text = "☆";
+            }
         }
 
         private void setValues(Player p)
@@ -33,13 +48,7 @@ namespace WCup_Forms.components
             {
                 lblPlayerIsCapetan.Text = "C";
             }
-            foreach (var f in s.favouritePlayers)
-            {
-                if (f.Name.Equals(p.Name))
-                {
-                    lblPlayerIsFavourite.Text = "★";
-                }
-            }
+            setIsFavourite(false);
         }
     }
 }

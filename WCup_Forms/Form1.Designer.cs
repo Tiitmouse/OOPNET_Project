@@ -33,20 +33,21 @@
             btnOpenSettings = new Button();
             tabControl = new TabControl();
             tabPagePlayers = new TabPage();
-            pictureBox1 = new PictureBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            pbPlayerPicture = new PictureBox();
+            flpFavouritePlayers = new FlowLayoutPanel();
             flpPlayersList = new FlowLayoutPanel();
             btnSetPlayerPicture = new Button();
             btnUnfavorite = new Button();
             btnFavorite = new Button();
             tabPageRanks = new TabPage();
+            flpNumberOfAtendees = new FlowLayoutPanel();
             flpPlayersFilterList = new FlowLayoutPanel();
             label2 = new Label();
             btnSortByYellowCards = new Button();
             btnSortByGoalNumber = new Button();
             tabControl.SuspendLayout();
             tabPagePlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).BeginInit();
             tabPageRanks.SuspendLayout();
             SuspendLayout();
             // 
@@ -90,8 +91,8 @@
             // 
             // tabPagePlayers
             // 
-            tabPagePlayers.Controls.Add(pictureBox1);
-            tabPagePlayers.Controls.Add(flowLayoutPanel1);
+            tabPagePlayers.Controls.Add(pbPlayerPicture);
+            tabPagePlayers.Controls.Add(flpFavouritePlayers);
             tabPagePlayers.Controls.Add(flpPlayersList);
             tabPagePlayers.Controls.Add(btnSetPlayerPicture);
             tabPagePlayers.Controls.Add(btnUnfavorite);
@@ -104,30 +105,31 @@
             tabPagePlayers.Text = "IGRACI";
             tabPagePlayers.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pbPlayerPicture
             // 
-            pictureBox1.Location = new Point(595, 195);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(180, 214);
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            pbPlayerPicture.Location = new Point(595, 195);
+            pbPlayerPicture.Name = "pbPlayerPicture";
+            pbPlayerPicture.Size = new Size(180, 214);
+            pbPlayerPicture.TabIndex = 5;
+            pbPlayerPicture.TabStop = false;
             // 
-            // flowLayoutPanel1
+            // flpFavouritePlayers
             // 
-            flowLayoutPanel1.Location = new Point(448, 22);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(327, 154);
-            flowLayoutPanel1.TabIndex = 4;
+            flpFavouritePlayers.Location = new Point(448, 22);
+            flpFavouritePlayers.Name = "flpFavouritePlayers";
+            flpFavouritePlayers.Size = new Size(327, 154);
+            flpFavouritePlayers.TabIndex = 4;
             // 
             // flpPlayersList
             // 
             flpPlayersList.AutoScroll = true;
             flpPlayersList.AutoScrollMargin = new Size(5, 5);
             flpPlayersList.FlowDirection = FlowDirection.TopDown;
-            flpPlayersList.Location = new Point(22, 22);
+            flpPlayersList.Location = new Point(8, 22);
             flpPlayersList.Name = "flpPlayersList";
-            flpPlayersList.Size = new Size(327, 387);
+            flpPlayersList.Size = new Size(360, 387);
             flpPlayersList.TabIndex = 3;
+            flpPlayersList.WrapContents = false;
             // 
             // btnSetPlayerPicture
             // 
@@ -162,6 +164,7 @@
             // 
             // tabPageRanks
             // 
+            tabPageRanks.Controls.Add(flpNumberOfAtendees);
             tabPageRanks.Controls.Add(flpPlayersFilterList);
             tabPageRanks.Controls.Add(label2);
             tabPageRanks.Controls.Add(btnSortByYellowCards);
@@ -173,6 +176,15 @@
             tabPageRanks.TabIndex = 1;
             tabPageRanks.Text = "RANG LISTE";
             tabPageRanks.UseVisualStyleBackColor = true;
+            // 
+            // flpNumberOfAtendees
+            // 
+            flpNumberOfAtendees.AutoScroll = true;
+            flpNumberOfAtendees.FlowDirection = FlowDirection.TopDown;
+            flpNumberOfAtendees.Location = new Point(430, 57);
+            flpNumberOfAtendees.Name = "flpNumberOfAtendees";
+            flpNumberOfAtendees.Size = new Size(248, 317);
+            flpNumberOfAtendees.TabIndex = 5;
             // 
             // flpPlayersFilterList
             // 
@@ -222,7 +234,7 @@
             Text = "Form1";
             tabControl.ResumeLayout(false);
             tabPagePlayers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).EndInit();
             tabPageRanks.ResumeLayout(false);
             tabPageRanks.PerformLayout();
             ResumeLayout(false);
@@ -244,8 +256,9 @@
         private Button btnSortByGoalNumber;
         private Button btnSetPlayerPicture;
         private FlowLayoutPanel flpPlayersList;
-        private PictureBox pictureBox1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pbPlayerPicture;
+        private FlowLayoutPanel flpFavouritePlayers;
         private FlowLayoutPanel flpPlayersFilterList;
+        private FlowLayoutPanel flpNumberOfAtendees;
     }
 }

@@ -1,4 +1,5 @@
 using QuickType;
+using System.Windows.Forms;
 using WCup_Data.DataFetching;
 using WCup_Data.Models;
 using WCup_Data.Settings;
@@ -18,6 +19,29 @@ namespace WCup_Forms
             _settings = SettingsController.GetSettings();
             _fetcher = FetchFactory.FetchData(_settings.DataFetchType);
             LoadTeams();
+            LoadAtendance();
+        }
+
+        private async void LoadAtendance()
+        {
+            var matches = await _fetcher.FetchMatches();
+            List<string> strings = matches
+                .OrderByDescending(m => m.Attendance)
+                .Select(m => $"{m.Location}    {m.Attendance} attendees")
+                .ToList();
+
+            List<Label> labels = new List<Label>();
+            foreach (var match in strings)
+            {
+                var label = new Label()
+                {
+                    Text = match,
+                    Width = 300
+                };
+                labels.Add(label);
+            }
+            flpNumberOfAtendees.Controls.AddRange(labels.ToArray());
+
         }
 
         private async Task LoadTeams()
@@ -31,6 +55,7 @@ namespace WCup_Forms
 
         private async Task LoadPlayers(string fifaCode)
         {
+            flpPlayersList.Controls.Clear();
             var matches = await _fetcher.fetchMatchesByCountry(fifaCode);
             var match = matches.First();
             List<Player> players = null;
@@ -69,6 +94,7 @@ namespace WCup_Forms
         {
             var fifaCode = (string)cbRepresentation.SelectedItem;
             LoadPlayers(fifaCode);
+
         }
     }
 }
