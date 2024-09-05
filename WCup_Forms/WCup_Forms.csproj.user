@@ -10,5 +10,11 @@
     <Compile Update="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="views\IgraciUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="views\RangListeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

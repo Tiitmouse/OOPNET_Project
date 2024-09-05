@@ -6,12 +6,13 @@ namespace WCup_Data.Settings;
 
 public class Settings
 {
-    public Settings(CupType cType, char dataFetchType, Language displayLanguage)
+    public Settings(CupType cType, char dataFetchType, Language displayLanguage, string favrep)
     {
         CType = cType;
         DataFetchType = dataFetchType;
         DisplayLanguage = displayLanguage;
         List<String> favouritePlayers;
+        FavouriteRepresentation = favrep;
     }
 
     internal Settings()
@@ -21,6 +22,9 @@ public class Settings
     public CupType CType{get; set; } // 'W' or 'M'
     public char DataFetchType{get; set; } // 'L' or 'G'
     public Language DisplayLanguage{get; set; }
+
+    public string FavouriteRepresentation { get; set; }
+
 
     public List<String> favouritePlayers { get; set; } = new List<String>();
 

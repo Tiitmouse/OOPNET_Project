@@ -33,21 +33,11 @@
             btnOpenSettings = new Button();
             tabControl = new TabControl();
             tabPagePlayers = new TabPage();
-            pbPlayerPicture = new PictureBox();
-            flpFavouritePlayers = new FlowLayoutPanel();
-            flpPlayersList = new FlowLayoutPanel();
-            btnSetPlayerPicture = new Button();
-            btnUnfavorite = new Button();
-            btnFavorite = new Button();
+            igraciUserControl1 = new views.IgraciUserControl();
             tabPageRanks = new TabPage();
-            flpNumberOfAtendees = new FlowLayoutPanel();
-            flpPlayersFilterList = new FlowLayoutPanel();
-            label2 = new Label();
-            btnSortByYellowCards = new Button();
-            btnSortByGoalNumber = new Button();
+            rangListeUserControl1 = new views.RangListeUserControl();
             tabControl.SuspendLayout();
             tabPagePlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).BeginInit();
             tabPageRanks.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,143 +73,50 @@
             // 
             tabControl.Controls.Add(tabPagePlayers);
             tabControl.Controls.Add(tabPageRanks);
-            tabControl.Location = new Point(0, 42);
+            tabControl.Dock = DockStyle.Bottom;
+            tabControl.Location = new Point(0, 43);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(801, 444);
+            tabControl.Size = new Size(800, 444);
             tabControl.TabIndex = 5;
             // 
             // tabPagePlayers
             // 
-            tabPagePlayers.Controls.Add(pbPlayerPicture);
-            tabPagePlayers.Controls.Add(flpFavouritePlayers);
-            tabPagePlayers.Controls.Add(flpPlayersList);
-            tabPagePlayers.Controls.Add(btnSetPlayerPicture);
-            tabPagePlayers.Controls.Add(btnUnfavorite);
-            tabPagePlayers.Controls.Add(btnFavorite);
+            tabPagePlayers.Controls.Add(igraciUserControl1);
             tabPagePlayers.Location = new Point(4, 24);
             tabPagePlayers.Name = "tabPagePlayers";
             tabPagePlayers.Padding = new Padding(3);
-            tabPagePlayers.Size = new Size(793, 416);
+            tabPagePlayers.Size = new Size(792, 416);
             tabPagePlayers.TabIndex = 0;
             tabPagePlayers.Text = "IGRACI";
             tabPagePlayers.UseVisualStyleBackColor = true;
             // 
-            // pbPlayerPicture
+            // igraciUserControl1
             // 
-            pbPlayerPicture.Location = new Point(595, 195);
-            pbPlayerPicture.Name = "pbPlayerPicture";
-            pbPlayerPicture.Size = new Size(180, 214);
-            pbPlayerPicture.TabIndex = 5;
-            pbPlayerPicture.TabStop = false;
-            // 
-            // flpFavouritePlayers
-            // 
-            flpFavouritePlayers.Location = new Point(448, 22);
-            flpFavouritePlayers.Name = "flpFavouritePlayers";
-            flpFavouritePlayers.Size = new Size(327, 154);
-            flpFavouritePlayers.TabIndex = 4;
-            // 
-            // flpPlayersList
-            // 
-            flpPlayersList.AutoScroll = true;
-            flpPlayersList.AutoScrollMargin = new Size(5, 5);
-            flpPlayersList.FlowDirection = FlowDirection.TopDown;
-            flpPlayersList.Location = new Point(8, 22);
-            flpPlayersList.Name = "flpPlayersList";
-            flpPlayersList.Size = new Size(360, 387);
-            flpPlayersList.TabIndex = 3;
-            flpPlayersList.WrapContents = false;
-            // 
-            // btnSetPlayerPicture
-            // 
-            btnSetPlayerPicture.Location = new Point(448, 195);
-            btnSetPlayerPicture.Name = "btnSetPlayerPicture";
-            btnSetPlayerPicture.Size = new Size(141, 33);
-            btnSetPlayerPicture.TabIndex = 2;
-            btnSetPlayerPicture.Text = "POSTAVI SLIKU";
-            btnSetPlayerPicture.UseVisualStyleBackColor = true;
-            // 
-            // btnUnfavorite
-            // 
-            btnUnfavorite.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUnfavorite.ImageAlign = ContentAlignment.TopCenter;
-            btnUnfavorite.Location = new Point(374, 112);
-            btnUnfavorite.Name = "btnUnfavorite";
-            btnUnfavorite.Size = new Size(48, 43);
-            btnUnfavorite.TabIndex = 1;
-            btnUnfavorite.Text = "<";
-            btnUnfavorite.UseVisualStyleBackColor = true;
-            // 
-            // btnFavorite
-            // 
-            btnFavorite.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFavorite.ImageAlign = ContentAlignment.TopCenter;
-            btnFavorite.Location = new Point(374, 41);
-            btnFavorite.Name = "btnFavorite";
-            btnFavorite.Size = new Size(48, 43);
-            btnFavorite.TabIndex = 0;
-            btnFavorite.Text = ">";
-            btnFavorite.UseVisualStyleBackColor = true;
+            igraciUserControl1.Dock = DockStyle.Fill;
+            igraciUserControl1.Location = new Point(3, 3);
+            igraciUserControl1.Name = "igraciUserControl1";
+            igraciUserControl1.Size = new Size(786, 410);
+            igraciUserControl1.TabIndex = 0;
             // 
             // tabPageRanks
             // 
-            tabPageRanks.Controls.Add(flpNumberOfAtendees);
-            tabPageRanks.Controls.Add(flpPlayersFilterList);
-            tabPageRanks.Controls.Add(label2);
-            tabPageRanks.Controls.Add(btnSortByYellowCards);
-            tabPageRanks.Controls.Add(btnSortByGoalNumber);
+            tabPageRanks.Controls.Add(rangListeUserControl1);
             tabPageRanks.Location = new Point(4, 24);
             tabPageRanks.Name = "tabPageRanks";
             tabPageRanks.Padding = new Padding(3);
-            tabPageRanks.Size = new Size(793, 416);
+            tabPageRanks.Size = new Size(792, 416);
             tabPageRanks.TabIndex = 1;
             tabPageRanks.Text = "RANG LISTE";
             tabPageRanks.UseVisualStyleBackColor = true;
             // 
-            // flpNumberOfAtendees
+            // rangListeUserControl1
             // 
-            flpNumberOfAtendees.AutoScroll = true;
-            flpNumberOfAtendees.FlowDirection = FlowDirection.TopDown;
-            flpNumberOfAtendees.Location = new Point(430, 57);
-            flpNumberOfAtendees.Name = "flpNumberOfAtendees";
-            flpNumberOfAtendees.Size = new Size(248, 317);
-            flpNumberOfAtendees.TabIndex = 5;
-            // 
-            // flpPlayersFilterList
-            // 
-            flpPlayersFilterList.FlowDirection = FlowDirection.TopDown;
-            flpPlayersFilterList.Location = new Point(16, 57);
-            flpPlayersFilterList.Name = "flpPlayersFilterList";
-            flpPlayersFilterList.Size = new Size(251, 304);
-            flpPlayersFilterList.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(494, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(109, 15);
-            label2.TabIndex = 2;
-            label2.Text = "BROJ POSJETITELJA";
-            // 
-            // btnSortByYellowCards
-            // 
-            btnSortByYellowCards.Location = new Point(155, 19);
-            btnSortByYellowCards.Name = "btnSortByYellowCards";
-            btnSortByYellowCards.Size = new Size(95, 23);
-            btnSortByYellowCards.TabIndex = 1;
-            btnSortByYellowCards.Text = "ZUTI KARTONI";
-            btnSortByYellowCards.UseVisualStyleBackColor = true;
-            // 
-            // btnSortByGoalNumber
-            // 
-            btnSortByGoalNumber.Location = new Point(16, 19);
-            btnSortByGoalNumber.Name = "btnSortByGoalNumber";
-            btnSortByGoalNumber.Size = new Size(95, 23);
-            btnSortByGoalNumber.TabIndex = 0;
-            btnSortByGoalNumber.Text = "GOLOVI";
-            btnSortByGoalNumber.UseVisualStyleBackColor = true;
+            rangListeUserControl1.Dock = DockStyle.Fill;
+            rangListeUserControl1.Location = new Point(3, 3);
+            rangListeUserControl1.Name = "rangListeUserControl1";
+            rangListeUserControl1.Size = new Size(786, 410);
+            rangListeUserControl1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -234,9 +131,7 @@
             Text = "Form1";
             tabControl.ResumeLayout(false);
             tabPagePlayers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).EndInit();
             tabPageRanks.ResumeLayout(false);
-            tabPageRanks.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,17 +143,8 @@
         private Button btnOpenSettings;
         private TabControl tabControl;
         private TabPage tabPagePlayers;
-        private Button btnUnfavorite;
-        private Button btnFavorite;
         private TabPage tabPageRanks;
-        private Label label2;
-        private Button btnSortByYellowCards;
-        private Button btnSortByGoalNumber;
-        private Button btnSetPlayerPicture;
-        private FlowLayoutPanel flpPlayersList;
-        private PictureBox pbPlayerPicture;
-        private FlowLayoutPanel flpFavouritePlayers;
-        private FlowLayoutPanel flpPlayersFilterList;
-        private FlowLayoutPanel flpNumberOfAtendees;
+        private views.IgraciUserControl igraciUserControl1;
+        private views.RangListeUserControl rangListeUserControl1;
     }
 }
