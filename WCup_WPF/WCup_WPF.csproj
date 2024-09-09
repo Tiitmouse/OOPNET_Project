@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="footballField.png" />
+    <None Remove="personPlaceholder.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <Resource Include="footballField.png" />
+    <Resource Include="personPlaceholder.png" />
   </ItemGroup>
 
 </Project>
