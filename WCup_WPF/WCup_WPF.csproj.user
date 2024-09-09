@@ -10,12 +10,30 @@
     <Compile Update="playerOnFieldControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PlayerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RepresentationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SettingsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="playerOnFieldControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PlayerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RepresentationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SettingsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
