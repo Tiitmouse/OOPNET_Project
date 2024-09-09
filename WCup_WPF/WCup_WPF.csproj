@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="footballField.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WCup_Data\WCup_Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="footballField.png" />
   </ItemGroup>
 
 </Project>

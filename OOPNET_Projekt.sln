@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WCup_Data", "WCup_Data\WCup
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{2F7C9AB4-91E8-4D8E-BDD3-4F5698922993}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCup_Forms", "WCup_Forms\WCup_Forms.csproj", "{76B30A06-507F-495A-8E76-F60EC3F02166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WCup_Forms", "WCup_Forms\WCup_Forms.csproj", "{76B30A06-507F-495A-8E76-F60EC3F02166}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCup_WPF", "WCup_WPF\WCup_WPF.csproj", "{20F8B25F-1832-45C2-BD00-CAB6778E3876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WCup_WPF", "WCup_WPF\WCup_WPF.csproj", "{20F8B25F-1832-45C2-BD00-CAB6778E3876}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WCup_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="490" Width="810">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="FavouriteRepresenation" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" VerticalAlignment="Top" Width="288"/>
+        <ComboBox x:Name="RivalRepresentation" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="16" Margin="423,10,0,0" VerticalAlignment="Top" Width="288"/>
+        <Label Grid.Column="1" Content="VS" HorizontalAlignment="Left" Margin="345,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,-0.083"/>
+        <Label x:Name="favRepResult" Content="/" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="317,6,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rivalRepResult" Content="/" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="385,6,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSettings" Content="⚙" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="750,7,0,0" VerticalAlignment="Top" Width="31"/>
+        <Rectangle HorizontalAlignment="Center" Height="382" Margin="0,42,0,0" VerticalAlignment="Top" Width="780" Grid.Column="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WCup_WPF;component/footballField.png" Stretch="UniformToFill" />
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Grid>
 </Window>
