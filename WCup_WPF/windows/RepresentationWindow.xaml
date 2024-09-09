@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WCup_WPF"
         mc:Ignorable="d"
-        Title="RepresentationWindow" Height="350" Width="400">
+        Title="🛈" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="REPREZENTACIJA" HorizontalAlignment="Left" Margin="21,17,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblRepresentationName" Content="naziv" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Width="96"/>

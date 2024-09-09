@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="footballField.png" />
-    <Resource Include="personPlaceholder.png" />
+    <Resource Include="resources\footballField.png" />
+    <Resource Include="resources\personPlaceholder.png" />
   </ItemGroup>
 
 </Project>

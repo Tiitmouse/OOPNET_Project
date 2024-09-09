@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WCup_WPF"
         mc:Ignorable="d"
-        Title="PlayerWindow" Height="350" Width="400" ResizeMode="NoResize">
+        Title="👤" Height="350" Width="400" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
     <Grid>
         <Label x:Name="lblPlayerName" Content="name" HorizontalAlignment="Center" Height="24" Margin="0,18,0,0" VerticalAlignment="Top" Width="238"/>
         <Label x:Name="lblPlayerShirtNumber" Content="0" HorizontalAlignment="Left" Margin="43,18,0,0" VerticalAlignment="Top" Width="33"/>
-        <Image x:Name="playerPicture" Source="/WCup_WPF;component/personPlaceholder.png" HorizontalAlignment="Center" Height="155" Margin="227,61,0,0" VerticalAlignment="Top" Width="130"/>
+        <Image x:Name="playerPicture" Source="/WCup_WPF;component/resources/personPlaceholder.png" HorizontalAlignment="Left" Height="155" Margin="248,61,0,0" VerticalAlignment="Top" Width="130" Opacity="0.1"/>
         <Label x:Name="lblPlayerPosition" Content="Pozicija" HorizontalAlignment="Left" Margin="43,61,0,0" VerticalAlignment="Top" Width="111"/>
         <Label x:Name="lblICapetan" Content="C" HorizontalAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top"/>
         <Label Content="Golovi u ovoj utakmici" HorizontalAlignment="Left" Margin="43,114,0,0" VerticalAlignment="Top"/>
         <Label Content="Ž kartoni u ovoj utakmici" HorizontalAlignment="Left" Margin="43,145,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblGoalCount" Content="0" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblYellowCards" Content="0" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnUploadPicture" Content="Dodaj sliku" HorizontalAlignment="Left" Height="19" Margin="253,238,0,0" VerticalAlignment="Top" Width="121"/>
 
     </Grid>
 </Window>

@@ -5,19 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WCup_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="490" Width="810">
+        Title="⚽︎ " Height="490" Width="820" ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
+    <!-- TODO fix responsivity -->
     <Grid>
         <ComboBox x:Name="FavouriteRepresenation" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" VerticalAlignment="Top" Width="288"/>
-        <ComboBox x:Name="RivalRepresentation" HorizontalAlignment="Left" Height="16" Margin="413,11,0,0" VerticalAlignment="Top" Width="288"/>
-        <Label Content="VS" HorizontalAlignment="Left" Margin="339,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,-0.083"/>
-        <Label x:Name="favRepResult" Content="/" HorizontalAlignment="Left" Margin="311,6,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rivalRepResult" Content="/" HorizontalAlignment="Left" Margin="379,6,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSettings" Content="⚙" HorizontalAlignment="Left" Height="22" Margin="764,8,0,0" VerticalAlignment="Top" Width="31"/>
-        <Rectangle HorizontalAlignment="Left" Height="382" Margin="15,58,0,0" VerticalAlignment="Top" Width="780" Grid.ColumnSpan="2">
+        <ComboBox x:Name="RivalRepresentation" HorizontalAlignment="Left" Height="16" Margin="437,10,0,0" VerticalAlignment="Top" Width="288"/>
+        <Label Content="VS" HorizontalAlignment="Left" Margin="365,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,-0.083"/>
+        <Label x:Name="favRepResult" Content="/" HorizontalAlignment="Left" Margin="337,6,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rivalRepResult" Content="/" HorizontalAlignment="Left" Margin="405,6,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSettings" Content="⚙" HorizontalAlignment="Left" Height="22" Margin="764,8,0,0" VerticalAlignment="Top" Width="31" Click="btnSettings_Click"/>
+        <Rectangle HorizontalAlignment="Stretch" Height="382" Margin="15,58,0,0" VerticalAlignment="Stretch" Width="780" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/WCup_WPF;component/footballField.png" Stretch="UniformToFill" />
+                <ImageBrush ImageSource="/WCup_WPF;component/resources/footballField.png" Stretch="UniformToFill" />
             </Rectangle.Fill>
         </Rectangle>
         <Label Content="Postava omiljene reprezentacije" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="lblFavTeamInfo" Content="🛈" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Top" FontSize="20" Margin="298,2,0,0" Background="White" BorderBrush="White" Click="lblFavTeamInfo_Click"/>
+        <Button x:Name="lblRivalTeamInfo" Content="🛈" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Top" FontSize="20" Margin="725,1,0,0" Background="White" BorderBrush="White" Click="lblRivalTeamInfo_Click"/>
     </Grid>
 </Window>

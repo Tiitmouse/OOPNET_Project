@@ -93,32 +93,40 @@ namespace WCup_Forms
 
         private void rbCupTypeWomen_CheckedChanged(object sender, EventArgs e)
         {
-            s.CType = CupType.women;
+            if(rbCupTypeWomen.Checked == true)
+                s.CType = CupType.women;
+            
+
         }
 
         private void rbCupTypeMen_CheckedChanged(object sender, EventArgs e)
         {
-            s.CType = CupType.men;
+            if (rbCupTypeMen.Checked == true)
+                s.CType = CupType.men;
         }
 
         private void rbLanguageEng_CheckedChanged(object sender, EventArgs e)
         {
+            if (rbLanguageEng.Checked == true)
             s.DisplayLanguage = Language.English;
         }
 
         private void rbLanguageCro_CheckedChanged(object sender, EventArgs e)
         {
-            s.DisplayLanguage = Language.Croatian;
+            if (rbLanguageCro.Checked == true)
+                s.DisplayLanguage = Language.Croatian;
         }
 
         private void rbDataFechLocal_CheckedChanged(object sender, EventArgs e)
         {
-            s.DataFetchType = 'L';
+            if (rbDataFechLocal.Checked == true)
+                s.DataFetchType = 'L';
         }
 
         private void rbDataFechGlobal_CheckedChanged(object sender, EventArgs e)
         {
-            s.DataFetchType = 'G';
+            if (rbDataFechGlobal.Checked == true)
+                s.DataFetchType = 'G';
         }
     }
 }

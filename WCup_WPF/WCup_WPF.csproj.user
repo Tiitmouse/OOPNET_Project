@@ -7,16 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="playerOnFieldControl.xaml.cs">
+    <Compile Update="controls\playerOnFieldControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PlayerWindow.xaml.cs">
+    <Compile Update="windows\PlayerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="RepresentationWindow.xaml.cs">
+    <Compile Update="windows\RepresentationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SettingsWindow.xaml.cs">
+    <Compile Update="windows\SettingsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,16 +24,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="playerOnFieldControl.xaml">
+    <Page Update="controls\playerOnFieldControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PlayerWindow.xaml">
+    <Page Update="windows\PlayerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="RepresentationWindow.xaml">
+    <Page Update="windows\RepresentationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SettingsWindow.xaml">
+    <Page Update="windows\SettingsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
