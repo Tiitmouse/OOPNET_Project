@@ -9,8 +9,8 @@
         WindowStartupLocation="CenterScreen">
     <!-- TODO fix responsivity -->
     <Grid>
-        <ComboBox x:Name="FavouriteRepresenation" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" VerticalAlignment="Top" Width="288"/>
-        <ComboBox x:Name="RivalRepresentation" HorizontalAlignment="Left" Height="16" Margin="437,10,0,0" VerticalAlignment="Top" Width="288"/>
+        <ComboBox x:Name="cbFavouriteRepresenation" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="288" SelectionChanged="cbFavouriteRepresenation_SelectionChanged"/>
+        <ComboBox x:Name="cbRivalRepresentation" HorizontalAlignment="Left" Height="23" Margin="437,10,0,0" VerticalAlignment="Top" Width="288" SelectionChanged="cbRivalRepresentation_SelectionChanged"/>
         <Label Content="VS" HorizontalAlignment="Left" Margin="365,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,-0.083"/>
         <Label x:Name="favRepResult" Content="/" HorizontalAlignment="Left" Margin="337,6,0,0" VerticalAlignment="Top"/>
         <Label x:Name="rivalRepResult" Content="/" HorizontalAlignment="Left" Margin="405,6,0,0" VerticalAlignment="Top"/>
@@ -22,8 +22,13 @@
         </Rectangle>
         <Label Content="Postava omiljene reprezentacije" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top"/>
         <Button x:Name="lblFavTeamInfo" Content="🛈" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left"
-                VerticalContentAlignment="Top" FontSize="20" Margin="298,2,0,0" Background="White" BorderBrush="White" Click="lblFavTeamInfo_Click"/>
+                VerticalContentAlignment="Top" FontSize="20" Margin="298,4,0,0" Background="White" BorderBrush="White" Click="lblFavTeamInfo_Click"/>
         <Button x:Name="lblRivalTeamInfo" Content="🛈" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left"
-            VerticalContentAlignment="Top" FontSize="20" Margin="725,1,0,0" Background="White" BorderBrush="White" Click="lblRivalTeamInfo_Click"/>
+            VerticalContentAlignment="Top" FontSize="20" Margin="725,4,0,0" Background="White" BorderBrush="White" Click="lblRivalTeamInfo_Click"/>
+        <ProgressBar x:Name="loadingProgressBar" 
+             Width="200" Height="20" 
+             HorizontalAlignment="Center" 
+             VerticalAlignment="Center" 
+             Visibility="Collapsed"/>
     </Grid>
 </Window>

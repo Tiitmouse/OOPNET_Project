@@ -30,9 +30,9 @@ public static class SettingsController
         {
             Settings defaultSettings = new Settings
             {
-                CType = Settings.CupType.women,
+                CType = Settings.CupType.men,
                 DataFetchType = 'G',
-                DisplayLanguage = Settings.Language.English
+                DisplayLanguage = Settings.Language.Croatian
             };
             IsDefault = true;
             return defaultSettings;

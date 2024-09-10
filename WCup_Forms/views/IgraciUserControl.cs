@@ -61,5 +61,23 @@ namespace WCup_Forms.views
             flpPlayersList.Controls.AddRange(pControls.ToArray());
 
         }
+
+        private void btnSetPlayerPicture_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    Image selectedImage = Image.FromFile(filePath);
+                    pbPlayerPicture.Image = selectedImage;
+                }
+            }
+        }
     }
 }

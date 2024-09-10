@@ -12,14 +12,12 @@
         <Label x:Name="lblRepresentationName" Content="naziv" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Width="96"/>
         <Label x:Name="lblRepresentationFIFAcode" Content="fifa" HorizontalAlignment="Left" Margin="268,17,0,0" VerticalAlignment="Top"/>
         <Label Content="UTAKMICE" HorizontalAlignment="Left" Margin="21,48,0,0" VerticalAlignment="Top"/>
-        <Label Content="Odigrano: " HorizontalAlignment="Left" Margin="21,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRepresentationGamesPlayed" Content="0" HorizontalAlignment="Left" Margin="87,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Pobjeda:" HorizontalAlignment="Left" Margin="120,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRepresentationGamesWon" Content="0" HorizontalAlignment="Left" Margin="180,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Poraz:" HorizontalAlignment="Left" Margin="210,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRepresentationGamesLost" Content="0" HorizontalAlignment="Left" Margin="254,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Neodlučeno:" HorizontalAlignment="Left" Margin="281,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRepresentationGamesTied" Content="0" HorizontalAlignment="Left" Margin="363,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pobjeda:" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRepresentationGamesWon" Content="0" HorizontalAlignment="Left" Margin="82,82,0,0" VerticalAlignment="Top"/>
+        <Label Content="Poraz:" HorizontalAlignment="Left" Margin="112,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRepresentationGamesLost" Content="0" HorizontalAlignment="Left" Margin="156,82,0,0" VerticalAlignment="Top"/>
+        <Label Content="Neodlučeno:" HorizontalAlignment="Left" Margin="183,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRepresentationGamesTied" Content="0" HorizontalAlignment="Left" Margin="265,82,0,0" VerticalAlignment="Top"/>
         <Label Content="UTAKMICE" HorizontalAlignment="Left" Margin="21,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Zabijeno: " HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center"/>
         <Label x:Name="lblRepresentationGoalsGiven" Content="0" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Center"/>
