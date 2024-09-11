@@ -16,7 +16,7 @@
         </Grid.RenderTransform>
         <Grid HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="50" Height="50">
             <Ellipse Fill="AliceBlue" Opacity="0.7"/>
-            <Ellipse>
+            <Ellipse x:Name="PCPicture">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/WCup_WPF;component/resources/personPlaceholder.png" Stretch="Uniform"/>
                 </Ellipse.Fill>

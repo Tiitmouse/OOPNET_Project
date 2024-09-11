@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WCup_Data.DataFetching;
 using WCup_Data.Models;
+using WCup_Data.Models.Enums;
 using WCup_Data.Settings;
 
 namespace WCup_WPF
@@ -27,6 +29,7 @@ namespace WCup_WPF
     {
         private IDataFetcher _fetcher;
         private Settings _settings;
+
 
         public MainWindow()
         {
@@ -185,6 +188,42 @@ namespace WCup_WPF
                 rivalRepResult.Content = match.HomeTeam.Goals;
                 favRepResult.Content = match.AwayTeam.Goals;
             }
+
+            setFormations();
+        }
+
+        private async void setFormations()
+        {
+            List<Player> players = new List<Player>();
+            string team = (string)cbFavouriteRepresenation.SelectedItem;
+            string rteam = (string)cbRivalRepresentation.SelectedItem;
+            var matches = await _fetcher.fetchMatchesByCountry(team);
+            var match = matches.FirstOrDefault(m => (m.HomeTeam.Code == team && m.AwayTeam.Code == rteam) ||
+                                (m.HomeTeam.Code == rteam && m.AwayTeam.Code == team));
+            Dictionary<string, List<Player>> startingEleven = new Dictionary<string, List<Player>>();
+            if (match != null)
+            {
+                startingEleven.Add(match.HomeTeam.Code, match.HomeTeamStatistics.StartingEleven.ToList());
+                startingEleven.Add(match.AwayTeam.Code, match.AwayTeamStatistics.StartingEleven.ToList());
+            }
+
+            // "Defender" "Forward" "Goalie" "Midfield"
+            players.AddRange(startingEleven[team]);
+
+            Dictionary<string, int> positionCounts = new Dictionary<string, int> { { "Defender", 0 }, { "Midfield", 0 }, { "Forward", 0 } };
+
+            foreach (var player in players)
+            {
+                string pos = player.Position.ToString();
+                    if (positionCounts.ContainsKey(pos))
+                    {
+                        positionCounts[pos] += 1;
+                    }
+            }
+
+            string generatedTactics = string.Join("-", positionCounts.Values);
+
+
         }
 
         private async void testPlayer_Click(object sender, RoutedEventArgs e)
@@ -212,7 +251,7 @@ namespace WCup_WPF
                 }
             }
 
-            PlayerWindow pw = new PlayerWindow(p, team,rteam);
+            PlayerWindow pw = new PlayerWindow(p, team, rteam);
             pw.ShowDialog();
         }
     }
