@@ -30,5 +30,6 @@
              HorizontalAlignment="Center" 
              VerticalAlignment="Center" 
              Visibility="Collapsed"/>
+        <Button x:Name="testPlayer" Content="⚙" HorizontalAlignment="Left" Height="22" Margin="804,8,0,0" VerticalAlignment="Top" Width="16" Click="testPlayer_Click"/>
     </Grid>
 </Window>

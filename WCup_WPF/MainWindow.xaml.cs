@@ -32,11 +32,6 @@ namespace WCup_WPF
         {
             InitializeComponent();
             SettingsWindow settingsWindow = new SettingsWindow();
-            //if(settingsWindow.IsEnabled)
-            //{
-            //    this.IsEnabled = false;
-            //    /this.Opacity = 0.1;
-            //}
             settingsWindow.ShowDialog();
             settingsWindow.Topmost = true;
             settingsWindow.Closed += settingsWindow_Closed;
@@ -45,7 +40,7 @@ namespace WCup_WPF
             LoadTeams();
         }
 
-        private async Task LoadTeams()
+        private async void LoadTeams()
         {
             if (_settings.FavouriteRepresentation != null)
             {
@@ -102,7 +97,7 @@ namespace WCup_WPF
             loadingProgressBar.IsIndeterminate = false;
             loadingProgressBar.Value = 0;
             loadingProgressBar.Maximum = 100;
-            RepresentationWindow rw = 
+            RepresentationWindow rw =
                 new RepresentationWindow((string)cbFavouriteRepresenation.SelectedItem, (string)cbRivalRepresentation.SelectedItem);
             var timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(30);
@@ -117,7 +112,7 @@ namespace WCup_WPF
                 if (currentStep >= steps)
                 {
                     loadingProgressBar.Visibility = Visibility.Hidden;
-                    RepresentationWindow rw = 
+                    RepresentationWindow rw =
                         new RepresentationWindow((string)cbFavouriteRepresenation.SelectedItem, (string)cbRivalRepresentation.SelectedItem);
                     rw.ShowDialog();
                     timer.Stop();
@@ -128,10 +123,6 @@ namespace WCup_WPF
 
         private void lblRivalTeamInfo_Click(object sender, RoutedEventArgs e)
         {
-            //PlayerWindow pw = new PlayerWindow();
-            //pw.ShowDialog();
-
-
             if (cbFavouriteRepresenation.SelectedIndex == -1 || cbRivalRepresentation.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select both teams first!");
@@ -194,6 +185,35 @@ namespace WCup_WPF
                 rivalRepResult.Content = match.HomeTeam.Goals;
                 favRepResult.Content = match.AwayTeam.Goals;
             }
+        }
+
+        private async void testPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            string team = cbFavouriteRepresenation.Text;
+            string rteam = cbRivalRepresentation.Text;
+            Player p = new Player();
+            var matches = await _fetcher.fetchMatchesByCountry(team);
+            var match = matches.First();
+            List<Player> players = new List<Player>();
+            if (match.AwayTeam.Code == team)
+            {
+                players = match.AwayTeamStatistics.StartingEleven.ToList();
+            }
+            else if (match.HomeTeam.Code == team)
+            {
+                players = match.HomeTeamStatistics.StartingEleven.ToList();
+            }
+
+            foreach (var pl in players)
+            {
+                if (pl.ShirtNumber == 19)
+                {
+                    p = pl;
+                }
+            }
+
+            PlayerWindow pw = new PlayerWindow(p, team,rteam);
+            pw.ShowDialog();
         }
     }
 }

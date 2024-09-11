@@ -63,7 +63,6 @@ namespace WCup_WPF
             {
                    lblRepresentationGamesLost.Content = 1;
             }
-            
         }
 
     }
