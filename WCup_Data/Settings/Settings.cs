@@ -7,17 +7,9 @@ namespace WCup_Data.Settings;
 
 public class Settings
 {
-    public Settings(CupType cType, char dataFetchType, Language displayLanguage, string favrep, string res)
-    {
-        CType = cType;
-        DataFetchType = dataFetchType;
-        DisplayLanguage = displayLanguage;
-        List<String> favouritePlayers;
-        FavouriteRepresentation = favrep;
-        resolution = res;
-    }
 
-    internal Settings()
+
+    public  Settings()
     {
         
     }

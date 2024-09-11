@@ -26,8 +26,8 @@ namespace WCup_WPF
         public string picturePath { get; set; }
         public playerOnFieldControl(Player player)
         {
-            this.player = player;
             InitializeComponent();
+            this.player = player;
             LoadInfo();
         }
 

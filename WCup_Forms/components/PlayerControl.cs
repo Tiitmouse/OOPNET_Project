@@ -50,5 +50,10 @@ namespace WCup_Forms.components
             }
             setIsFavourite(false);
         }
+
+        public string getName()
+        {
+            return lblPlayerName.Text;
+        }
     }
 }

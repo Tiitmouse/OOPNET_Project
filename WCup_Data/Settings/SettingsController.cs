@@ -22,11 +22,10 @@ public static class SettingsController
         {
             CheckDir();
             string json = File.ReadAllText(Path.Combine(appDataPath, folderName, fileName));
-            Settings settings = JsonSerializer.Deserialize<Settings>(json) 
-                                ?? throw new InvalidOperationException();
+            Settings settings = JsonSerializer.Deserialize<Settings>(json);
             return settings;
         }
-        catch (Exception)
+        catch (Exception e)
         {
             Settings defaultSettings = new Settings
             {

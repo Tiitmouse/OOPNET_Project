@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WCup_Data.DataFetching;
 using WCup_Data.Models;
+using WCup_Data.PictureLoaders;
 using WCup_Data.Settings;
 using WCup_Forms.components;
 
@@ -46,7 +47,7 @@ namespace WCup_Forms.views
 
         private async Task LoadPlayers(string fifaCode)
         {
-            flpPlayersList.Controls.Clear();
+             ClearFlowLayoutPanels();
             var matches = await _fetcher.fetchMatchesByCountry(fifaCode);
             var match = matches.First();
             List<Player>? players = null;
@@ -71,6 +72,28 @@ namespace WCup_Forms.views
             }
 
             flpPlayersList.Controls.AddRange(pControls.ToArray());
+
+            loadFav(players);
+        }
+
+        private void loadFav(List<Player> players)
+        {
+            List<PlayerControl> pControls = new List<PlayerControl>();
+            List<string> favs = new List<string>();
+            favs.AddRange(_settings.favouritePlayers);
+            List<Player> favpl =  players.Where(p => favs.Contains(p.Name)).ToList();
+            foreach (var player in favpl)
+            {
+                var playerControl = new PlayerControl(player);
+                playerControl.Click += PlayerControl_Click;
+                pControls.Add(playerControl);
+            }
+            if (pControls.Count == 0)
+            {
+                return;
+            }
+             flpFavouritePlayers.Controls.AddRange(pControls.ToArray());
+
         }
 
         private void PlayerControl_Click(object? sender, EventArgs e)
@@ -80,6 +103,11 @@ namespace WCup_Forms.views
 
         private void btnSetPlayerPicture_Click(object sender, EventArgs e)
         {
+            if (_selectedPlayerControl == null)
+            {
+                MessageBox.Show("Please select a player first.");
+                return;
+            }
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
@@ -90,8 +118,12 @@ namespace WCup_Forms.views
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string filePath = openFileDialog.FileName;
-                    Image selectedImage = Image.FromFile(filePath);
-                    pbPlayerPicture.Image = selectedImage;
+                    PictureUtils.savePicture(filePath, _selectedPlayerControl.getName());
+                    var img = PictureUtils.LoadPicture(_selectedPlayerControl.getName());
+                    if (img != null)
+                    {
+                        Image selectedImage = Image.FromFile(img);
+                    }
                 }
             }
         }
@@ -131,11 +163,18 @@ namespace WCup_Forms.views
 
         private void btnFavorite_Click(object sender, EventArgs e)
         {
+            if (flpFavouritePlayers.Controls.Count == 3)
+            {
+                return;
+            }
             if (_selectedPlayerControl != null)
             {
                 flpPlayersList.Controls.Remove(_selectedPlayerControl);
                 flpFavouritePlayers.Controls.Add(_selectedPlayerControl);
-                _selectedPlayerControl = null; // Clear the selection
+                _settings.favouritePlayers.Add(_selectedPlayerControl.getName());
+                _selectedPlayerControl.setIsFavourite(true);
+                _selectedPlayerControl = null;
+                SettingsController.SaveSettings();
             }
         }
 
@@ -145,8 +184,15 @@ namespace WCup_Forms.views
             {
                 flpFavouritePlayers.Controls.Remove(_selectedPlayerControl);
                 flpPlayersList.Controls.Add(_selectedPlayerControl);
+                _selectedPlayerControl.setIsFavourite(false);
                 _selectedPlayerControl = null; // Clear the selection
             }
+        }
+
+        private void ClearFlowLayoutPanels()
+        {
+            flpPlayersList.Controls.Clear();
+            flpFavouritePlayers.Controls.Clear();
         }
     }
 }

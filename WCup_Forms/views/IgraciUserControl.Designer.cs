@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pbPlayerPicture = new PictureBox();
             flpFavouritePlayers = new FlowLayoutPanel();
             flpPlayersList = new FlowLayoutPanel();
             btnSetPlayerPicture = new Button();
             btnUnfavorite = new Button();
             btnFavorite = new Button();
-            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).BeginInit();
             SuspendLayout();
-            // 
-            // pbPlayerPicture
-            // 
-            pbPlayerPicture.Location = new Point(600, 188);
-            pbPlayerPicture.Name = "pbPlayerPicture";
-            pbPlayerPicture.Size = new Size(180, 214);
-            pbPlayerPicture.TabIndex = 11;
-            pbPlayerPicture.TabStop = false;
             // 
             // flpFavouritePlayers
             // 
@@ -103,7 +93,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pbPlayerPicture);
             Controls.Add(flpFavouritePlayers);
             Controls.Add(flpPlayersList);
             Controls.Add(btnSetPlayerPicture);
@@ -111,13 +100,10 @@
             Controls.Add(btnFavorite);
             Name = "IgraciUserControl";
             Size = new Size(793, 416);
-            ((System.ComponentModel.ISupportInitialize)pbPlayerPicture).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pbPlayerPicture;
         private FlowLayoutPanel flpFavouritePlayers;
         private FlowLayoutPanel flpPlayersList;
         private Button btnSetPlayerPicture;

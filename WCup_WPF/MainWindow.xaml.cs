@@ -18,6 +18,7 @@ using WCup_Data.DataFetching;
 using WCup_Data.Models;
 using WCup_Data.Models.Enums;
 using WCup_Data.Settings;
+using WCup_WPF.formationColumns;
 
 namespace WCup_WPF
 {
@@ -190,6 +191,7 @@ namespace WCup_WPF
             }
 
             setFormations();
+            
         }
 
         private async void setFormations()
@@ -226,7 +228,7 @@ namespace WCup_WPF
 
         }
 
-        private async void testPlayer_Click(object sender, RoutedEventArgs e)
+        private async Task testPlayer_ClickAsync(object sender, RoutedEventArgs e)
         {
             string team = cbFavouriteRepresenation.Text;
             string rteam = cbRivalRepresentation.Text;
@@ -253,6 +255,8 @@ namespace WCup_WPF
 
             PlayerWindow pw = new PlayerWindow(p, team, rteam);
             pw.ShowDialog();
+            //defenderControl dc = new defenderControl(3, p);
+            //defenderControl.Content = dc;
         }
     }
 }

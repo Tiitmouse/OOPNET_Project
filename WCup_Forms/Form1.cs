@@ -32,6 +32,10 @@ namespace WCup_Forms
                 .Order()
                 .ToArray();
             cbRepresentation.Items.AddRange(teams);
+            if (_settings.FavouriteRepresentation != null)
+            {
+                cbRepresentation.SelectedItem = _settings.FavouriteRepresentation?.ToString();
+            }
         }
 
 
