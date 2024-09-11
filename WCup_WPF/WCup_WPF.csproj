@@ -21,4 +21,8 @@
     <Resource Include="resources\personPlaceholder.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="formationColumns\" />
+  </ItemGroup>
+
 </Project>
