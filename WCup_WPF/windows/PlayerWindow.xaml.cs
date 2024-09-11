@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using WCup_Data.DataFetching;
 using WCup_Data.Models;
 using WCup_Data.Models.Enums;
+using WCup_Data.PictureLoaders;
 using WCup_Data.Settings;
 
 namespace WCup_WPF
@@ -66,6 +67,12 @@ namespace WCup_WPF
             int yellowCardCount = plEvents.Count(ev => ev.TypeOfEvent == TypeOfEvent.YellowCard || ev.TypeOfEvent == TypeOfEvent.YellowCardSecond);
 
             lblYellowCards.Content = yellowCardCount.ToString();
+
+            string picturePath = PictureUtils.LoadPicture(player.Name.ToString());
+            if (File.Exists(picturePath))
+            {
+                playerPicture.Source = new BitmapImage(new Uri(picturePath));
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

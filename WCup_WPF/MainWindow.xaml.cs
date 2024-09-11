@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,6 @@ using WCup_Data.DataFetching;
 using WCup_Data.Models;
 using WCup_Data.Models.Enums;
 using WCup_Data.Settings;
-using WCup_WPF.formationColumns;
 
 namespace WCup_WPF
 {
@@ -191,7 +191,7 @@ namespace WCup_WPF
             }
 
             setFormations();
-            
+
         }
 
         private async void setFormations()
@@ -211,23 +211,18 @@ namespace WCup_WPF
 
             // "Defender" "Forward" "Goalie" "Midfield"
             players.AddRange(startingEleven[team]);
-
-            Dictionary<string, int> positionCounts = new Dictionary<string, int> { { "Defender", 0 }, { "Midfield", 0 }, { "Forward", 0 } };
-
-            foreach (var player in players)
+            int ind = 0;
+            List<playerOnFieldControl> controls = new List<playerOnFieldControl>();
+            foreach (UIElement element in positions.Children)
             {
-                string pos = player.Position.ToString();
-                    if (positionCounts.ContainsKey(pos))
-                    {
-                        positionCounts[pos] += 1;
-                    }
+                if (element is playerOnFieldControl playerControl)
+                {
+                    playerControl.setPlayer(players[ind]);
+                    playerControl.setTeams(cbFavouriteRepresenation.Text, cbRivalRepresentation.Text);
+                    ind ++;
+                }
             }
-
-            string generatedTactics = string.Join("-", positionCounts.Values);
-
-
         }
-
         private async Task testPlayer_ClickAsync(object sender, RoutedEventArgs e)
         {
             string team = cbFavouriteRepresenation.Text;

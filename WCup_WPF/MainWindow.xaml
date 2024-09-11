@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WCup_WPF"
-        xmlns:formationColumns="clr-namespace:WCup_WPF.formationColumns"
         mc:Ignorable="d"
         Title="⚽︎ " Height="490" Width="820" ResizeMode="CanResize"
         WindowStartupLocation="CenterScreen">
@@ -31,9 +30,36 @@
              HorizontalAlignment="Center" 
              VerticalAlignment="Center" 
              Visibility="Collapsed"/>
-       <!--<Button x:Name="testPlayer" Content="⚙" HorizontalAlignment="Left" Height="22" Margin="804,8,0,0" VerticalAlignment="Top" Width="16" Click="testPlayer_Click"/>-->
-        <Grid>
-            <!--<local:formationColumns.defenderControl x:Name="DefenderControl"/>-->
+        <!--<Button x:Name="testPlayer" Content="⚙" HorizontalAlignment="Left" Height="22" Margin="804,8,0,0" VerticalAlignment="Top" Width="16" Click="testPlayer_Click"/>-->
+        <Grid x:Name="positions" Margin="101,78,380,32">
+            <!-- Define rows and columns for the grid -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <local:playerOnFieldControl x:Name="pcgoalman" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Margin="-4,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0"/>
+
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Margin="0,0,0,0"/>
+
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0"/>
+            <local:playerOnFieldControl  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Margin="0,0,0,0"/>
         </Grid>
+
     </Grid>
 </Window>
