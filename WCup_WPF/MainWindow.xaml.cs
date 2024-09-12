@@ -30,6 +30,7 @@ namespace WCup_WPF
     {
         private IDataFetcher _fetcher;
         private Settings _settings;
+        private string resolution;
 
 
         public MainWindow()
@@ -41,7 +42,34 @@ namespace WCup_WPF
             settingsWindow.Closed += settingsWindow_Closed;
             _settings = SettingsController.GetSettings();
             _fetcher = FetchFactory.FetchData(_settings.DataFetchType);
+            setResolution();
             LoadTeams();
+        }
+
+        private void setResolution()
+        {
+            resolution = _settings.Resolution;
+            if (resolution != null)
+            {
+                if (resolution == "Fullscreen")
+                {
+                    this.WindowState = WindowState.Maximized;
+                    this.WindowStyle = WindowStyle.None;
+                    this.ResizeMode = ResizeMode.NoResize;
+                }
+                var resolutionParts = resolution.Split('x');
+                if (resolutionParts.Length == 2 &&
+                    int.TryParse(resolutionParts[0], out int screenHeight) &&
+                    int.TryParse(resolutionParts[1], out int screenWidth))
+                {
+                    this.Width = screenWidth;
+                    this.Height = screenHeight;
+                }
+            } else
+            {
+                this.Width = 820;
+                this.Height = 490;
+            }
         }
 
         private async void LoadTeams()
@@ -220,6 +248,19 @@ namespace WCup_WPF
                     playerControl.setPlayer(players[ind]);
                     playerControl.setTeams(cbFavouriteRepresenation.Text, cbRivalRepresentation.Text);
                     ind ++;
+                }
+            }
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Key.Escape)
+            {
+                var result = MessageBox.Show("Do you really want to exit?", "Exit Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Application.Current.Shutdown();
                 }
             }
         }

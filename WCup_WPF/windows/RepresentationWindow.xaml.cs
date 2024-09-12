@@ -65,5 +65,13 @@ namespace WCup_WPF
             }
         }
 
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

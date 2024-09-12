@@ -16,7 +16,7 @@ public class Settings
     public CupType CType{get; set; } // 'W' or 'M'
     public char DataFetchType{get; set; } // 'L' or 'G'
     public Language DisplayLanguage{get; set; }
-    public string resolution { get; set; }
+    public string Resolution { get; set; }
 
     public string FavouriteRepresentation { get; set; }
 
@@ -31,7 +31,4 @@ public class Settings
     {
         English, Croatian
     } 
-    // TODO add resolution
-    // TODO add fav players and team
-    
 }

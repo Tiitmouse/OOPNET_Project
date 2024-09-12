@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="👤" Height="350" Width="400" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" KeyDown="OnKeyDown">
     <Grid>
         <Label x:Name="lblPlayerName" Content="name" HorizontalAlignment="Center" Height="24" Margin="0,18,0,0" VerticalAlignment="Top" Width="238"/>
         <Label x:Name="lblPlayerShirtNumber" Content="0" HorizontalAlignment="Left" Margin="43,18,0,0" VerticalAlignment="Top" Width="33"/>

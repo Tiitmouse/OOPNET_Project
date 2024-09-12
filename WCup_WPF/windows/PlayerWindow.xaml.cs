@@ -86,5 +86,14 @@ namespace WCup_WPF
 
             playerPicture.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
         }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Key.Escape)
+            {
+                    this.Close();
+            }
+        }
     }
 }

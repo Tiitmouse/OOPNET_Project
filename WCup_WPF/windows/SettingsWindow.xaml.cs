@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WCup_Data.Settings;
 using static WCup_Data.Settings.Settings;
 
@@ -23,7 +24,7 @@ namespace WCup_WPF
             s = SettingsController.GetSettings(); //myb no need 
             string ct = s.CType.ToString();
             string lang = s.DisplayLanguage.ToString();
-            string res = s.resolution?.ToString() ?? "490x820";
+            string res = s.Resolution?.ToString() ?? "490x820";
 
 
             setCupType(ct);
@@ -96,7 +97,7 @@ namespace WCup_WPF
         {
             if (cbResolutions.SelectedItem != null)
             {
-                s.resolution = cbResolutions.SelectedItem?.ToString() ?? string.Empty;
+                s.Resolution = cbResolutions.SelectedItem.ToString().Split(" ")[1];
             }
         }
 
@@ -120,6 +121,26 @@ namespace WCup_WPF
             s.DisplayLanguage = Settings.Language.Croatian;
         }
 
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Key.Escape)
+            {
+                var result = MessageBox.Show("Save before exit", "Exit Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    SettingsController.SaveSettings();
+                    this.Close();
+                }
+                else {
+                    this.Close();
+                }
+            }
 
+            if (e.Key == Key.Enter) {
+                SettingsController.SaveSettings();
+                this.Close();
+            }
+        }
     }
 }
