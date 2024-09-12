@@ -52,12 +52,20 @@ namespace WCup_WPF
             PCnumber.Content = player.ShirtNumber.ToString();
             PCname.Content = player.Name.ToString();
             picturePath = PictureUtils.LoadPicture(player.Name.ToString());
+
             if (File.Exists(picturePath))
             {
                 ImageBrush imageBrush = new ImageBrush();
                 imageBrush.ImageSource = new BitmapImage(new Uri(picturePath));
                 PCPicture.Fill = imageBrush;
+            } else
+            {
+                ImageBrush imageBrush = new ImageBrush();
+                imageBrush.ImageSource =
+                    new BitmapImage(new Uri("pack://application:,,,/WCup_WPF;component/resources/personPlaceholder.png", UriKind.Absolute));
+                PCPicture.Fill = imageBrush;
             }
+                
         }
 
         private void openPlayerWindow(object sender, MouseButtonEventArgs e)
