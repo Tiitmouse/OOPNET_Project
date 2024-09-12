@@ -223,35 +223,5 @@ namespace WCup_WPF
                 }
             }
         }
-        private async Task testPlayer_ClickAsync(object sender, RoutedEventArgs e)
-        {
-            string team = cbFavouriteRepresenation.Text;
-            string rteam = cbRivalRepresentation.Text;
-            Player p = new Player();
-            var matches = await _fetcher.fetchMatchesByCountry(team);
-            var match = matches.First();
-            List<Player> players = new List<Player>();
-            if (match.AwayTeam.Code == team)
-            {
-                players = match.AwayTeamStatistics.StartingEleven.ToList();
-            }
-            else if (match.HomeTeam.Code == team)
-            {
-                players = match.HomeTeamStatistics.StartingEleven.ToList();
-            }
-
-            foreach (var pl in players)
-            {
-                if (pl.ShirtNumber == 19)
-                {
-                    p = pl;
-                }
-            }
-
-            PlayerWindow pw = new PlayerWindow(p, team, rteam);
-            pw.ShowDialog();
-            //defenderControl dc = new defenderControl(3, p);
-            //defenderControl.Content = dc;
-        }
     }
 }
